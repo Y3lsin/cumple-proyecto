@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz Cumpleaños 💖</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2d1b2d 50%, #8B0000 100%);
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+      color: white;
+    }
+
+    .code-matrix, .binary-stars, .particles {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;
+    }
+
+    .code-matrix { z-index: 1; opacity: 0.1; }
+    .binary-stars { z-index: 2; }
+    .particles { z-index: 3; overflow: hidden; }
+
+    .code-line {
+      position: absolute; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #8B0000;
+      animation: codeRain 15s linear infinite; white-space: nowrap;
+    }
+    @keyframes codeRain {
+      0% { transform: translateY(-100px); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+
+    .binary-star {
+      position: absolute; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #ffffff;
+      animation: binaryTwinkle 3s infinite alternate;
+    }
+    @keyframes binaryTwinkle {
+      0% { opacity: 0.2; text-shadow: 0 0 5px #8B0000; }
+      100% { opacity: 1; text-shadow: 0 0 15px #ffffff, 0 0 25px #8B0000; }
+    }
+
+    .particle {
+      position: absolute; font-size: 24px; animation: float-up 12s linear infinite; opacity: 0.8;
+    }
+    @keyframes float-up {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+    }
+
+    .main-content {
+      position: relative; z-index: 10; height: 100vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+    }
+
+    .title {
+      font-family: 'Dancing Script', cursive;
+      font-size: 4.5em;
+      background: linear-gradient(45deg, #ffffff, #8B0000, #ffffff);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; background-size: 200% 100%;
+      animation: textShine 4s ease-in-out infinite;
+    }
+    @keyframes textShine {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .subtitle { font-size: 1.8em; margin-bottom: 20px; }
+
+    .love-message {
+      max-width: 800px;
+      margin-top: 20px;
+      background: rgba(0,0,0,0.5);
+      padding: 25px 35px;
+      border-radius: 20px;
+      font-size: 1.2em;
+      line-height: 1.8em;
+      text-align: justify;
+      box-shadow: 0 0 20px rgba(139,0,0,0.6);
+      animation: fadeIn 2s ease-in-out;
+    }
+    .love-message p {
+      margin-bottom: 15px;
+      color: #fff;
+      text-shadow: 0 0 10px #8B0000;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .photo-gallery {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 4;
+    }
+
+    .romantic-photo {
+      position: absolute; width: 200px; height: 250px;
+      background: linear-gradient(145deg, #1a1a1a, #8B0000);
+      border-radius: 15px; padding: 10px;
+      animation: photoFloat 20s linear infinite; opacity: 0;
+      box-shadow: 0 0 25px rgba(139, 0, 0, 0.6);
+    }
+    .romantic-photo img {
+      width: 100%; height: 200px; object-fit: cover;
+      border-radius: 8px; border: 2px solid #fff; transition: transform 0.3s;
+    }
+    .romantic-photo img:hover { transform: scale(1.1); }
+
+    @keyframes photoFloat {
+      0% { transform: translateY(100vh) rotate(-8deg); opacity: 0; }
+      15% { opacity: 0.9; }
+      85% { opacity: 0.9; }
+      100% { transform: translateY(-280px) rotate(8deg); opacity: 0; }
+    }
+
+    .song-message {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px 25px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(139, 0, 0, 0.8);
+      z-index: 20;
+    }
+    .song-message p {
+      margin: 0; font-size: 1.2em; font-weight: bold; color: #fff; text-shadow: 0 0 10px #8B0000;
+    }
+    .song-message a {
+      display: inline-block; margin-top: 10px; padding: 8px 15px;
+      background: linear-gradient(45deg, #8B0000, #000);
+      color: #fff; text-decoration: none; border-radius: 8px;
+      transition: 0.3s; font-weight: 600;
+    }
+    .song-message a:hover { background: linear-gradient(45deg, #ff0000, #8B0000); transform: scale(1.05); }
+
+    .terminal {
+      position: fixed;
+      bottom: 120px;
+      left: 40px;
+      width: 420px;
+      background: rgba(0,0,0,0.9);
+      border: 1px solid #8B0000;
+      border-radius: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      color: #fff;
+      padding: 15px;
+      box-shadow: 0 0 20px rgba(139,0,0,0.6);
+      z-index: 30;
+    }
+    .terminal-line { margin: 4px 0; opacity: 0; animation: typeIn 0.5s ease-out forwards; }
+    @keyframes typeIn { to { opacity: 1; } }
+  </style>
+</head>
+<body>
+  <div class="code-matrix" id="codeMatrix"></div>
+  <div class="binary-stars" id="binaryStars"></div>
+  <div class="particles" id="particles"></div>
+  
+  <div class="main-content">
+    <h1 class="title">💖 Feliz Cumpleaños 💖</h1>
+    <p class="subtitle">Mi Developer Favorita ⚡ Te Amo 🌹</p>
+
+    <div class="love-message">
+      <p>
+        Amor, hoy es un día especial porque es tu cumpleaños y no sabes lo feliz que me siento de poder compartirlo contigo. 
+        Quiero que sepas que puedes confiar en mí siempre, en cada momento, porque yo te adoro tal como eres y te amo demasiado.
+      </p>
+      <p>
+        Mi amor por ti es tan grande como el amor que le tengo al fútbol —y tú sabes lo que eso significa para mí—, pero tú eres mucho más que eso, eres todo. 
+        Gracias por estos más de 3 años juntos, por cada risa, por cada momento, y porque sigues siendo la persona más increíble para mí.
+      </p>
+      <p>
+        Prometo estar a tu lado en las buenas y en las malas, aunque espero que la vida nos regale más buenas que malas. 
+        Que tengas un cumpleaños hermoso, mi amor, porque te lo mereces todo. ❤️
+      </p>
+    </div>
+  </div>
+
+  <div class="photo-gallery">
+    <div class="romantic-photo" style="left: 10%; top: 20%; animation-delay: 2s;">
+      <img src="foto1.jpg" alt="Foto 1">
+    </div>
+    <div class="romantic-photo" style="left: 70%; top: 25%; animation-delay: 5s;">
+      <img src="foto2.jpg" alt="Foto 2">
+    </div>
+    <div class="romantic-photo" style="left: 20%; top: 60%; animation-delay: 8s;">
+      <img src="foto3.jpg" alt="Foto 3">
+    </div>
+    <div class="romantic-photo" style="left: 75%; top: 65%; animation-delay: 11s;">
+      <img src="foto4.jpg" alt="Foto 4">
+    </div>
+  </div>
+
+  <div class="song-message">
+    <p>🎵 De esta Canción no me Olvidaré nunca 💖</p>
+    <a href="https://www.youtube.com/watch?v=pz9O3UeM_o0&list=RDpz9O3UeM_o0&start_radio=1" target="_blank">
+      Escuchar en YouTube 🎶
+    </a>
+  </div>
+
+  <div class="terminal" id="terminal">
+    <div class="terminal-line" style="animation-delay: 0.5s;">
+      <span style="color: #8B0000;">></span> Compilando amor... ❤️ SUCCESS
+    </div>
+    <div class="terminal-line" style="animation-delay: 1s;">
+      <span style="color: #8B0000;">></span> Output: Te amo más cada día 💕
+    </div>
+    <div class="terminal-line" style="animation-delay: 1.5s;">
+      <span style="color: #8B0000;">></span> Ejecutando: abrazo_virtual.exe
+    </div>
+    <div class="terminal-line" style="animation-delay: 2s;">
+      <span style="color: #8B0000;">></span> Debug: Tu sonrisa = perfección
+    </div>
+  </div>
+
+  <script>
+    function createCodeMatrix() {
+      const codeLines = ['function love() { return "infinito"; }','while(true){te_amo++;}','if(cumple) celebrar();'];
+      setInterval(() => {
+        const line = document.createElement('div');
+        line.className = 'code-line';
+        line.innerHTML = codeLines[Math.floor(Math.random() * codeLines.length)];
+        line.style.left = Math.random() * (window.innerWidth - 300) + 'px';
+        line.style.animationDuration = (Math.random() * 5 + 10) + 's';
+        document.getElementById('codeMatrix').appendChild(line);
+        setTimeout(() => line.remove(), 15000);
+      }, 2000);
+    }
+    function createBinaryStars() {
+      const container = document.getElementById('binaryStars');
+      for (let i = 0; i < 50; i++) {
+        const star = document.createElement('div');
+        star.className = 'binary-star';
+        star.innerHTML = Math.random() > 0.5 ? '1' : '0';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.animationDelay = Math.random() * 3 + 's';
+        container.appendChild(star);
+      }
+    }
+    function createProgrammingParticles() {
+      const particles = ['{ }','< >','💻','⚡','✨','💕','❤️'];
+      setInterval(() => {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.innerHTML = particles[Math.floor(Math.random() * particles.length)];
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDuration = (Math.random() * 4 + 8) + 's';
+        particle.style.color = Math.random() > 0.5 ? '#8B0000' : '#ffffff';
+        document.getElementById('particles').appendChild(particle);
+        setTimeout(() => particle.remove(), 12000);
+      }, 1500);
+    }
+    createCodeMatrix();
+    createBinaryStars();
+    createProgrammingParticles();
+  </script>
+</body>
+</html>
