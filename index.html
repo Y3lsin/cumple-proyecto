@@ -10,7 +10,7 @@
 
     body {
       height: 100vh;
-      overflow: hidden;
+      overflow-x: hidden;
       background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2d1b2d 50%, #8B0000 100%);
       font-family: 'Poppins', sans-serif;
       position: relative;
@@ -56,8 +56,9 @@
     }
 
     .main-content {
-      position: relative; z-index: 10; height: 100vh;
+      position: relative; z-index: 10; height: auto;
       display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+      padding: 30px 15px;
     }
 
     .title {
@@ -124,26 +125,24 @@
     }
 
     .song-message {
-      position: absolute;
-      bottom: 40px;
-      right: 40px;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 15px 25px;
-      border-radius: 15px;
+      margin-top: 30px;
       text-align: center;
-      box-shadow: 0 0 15px rgba(139, 0, 0, 0.8);
       z-index: 20;
     }
     .song-message p {
-      margin: 0; font-size: 1.2em; font-weight: bold; color: #fff; text-shadow: 0 0 10px #8B0000;
+      margin: 0; font-size: 1.4em; font-weight: bold; color: #fff; text-shadow: 0 0 10px #8B0000;
     }
-    .song-message a {
-      display: inline-block; margin-top: 10px; padding: 8px 15px;
+    .music-btn {
+      display: inline-block; margin-top: 15px; padding: 12px 25px;
+      background: linear-gradient(45deg, #ff0000, #8B0000);
+      color: #fff; text-decoration: none; border-radius: 10px;
+      font-weight: 600; font-size: 1.1em; transition: 0.3s;
+      box-shadow: 0 0 15px rgba(139,0,0,0.6);
+    }
+    .music-btn:hover {
       background: linear-gradient(45deg, #8B0000, #000);
-      color: #fff; text-decoration: none; border-radius: 8px;
-      transition: 0.3s; font-weight: 600;
+      transform: scale(1.1);
     }
-    .song-message a:hover { background: linear-gradient(45deg, #ff0000, #8B0000); transform: scale(1.05); }
 
     .terminal {
       position: fixed;
@@ -186,6 +185,13 @@
         Que tengas un cumpleaños hermoso, mi amor, porque te lo mereces todo. ❤️
       </p>
     </div>
+
+    <div class="song-message">
+      <p>🎵 Jamás me olvidaré de esta canción 💖</p>
+      <a href="https://www.youtube.com/watch?v=pz9O3UeM_o0&list=RDpz9O3UeM_o0&start_radio=1" target="_blank" class="music-btn">
+        ▶️ Escuchar canción especial 🎶
+      </a>
+    </div>
   </div>
 
   <div class="photo-gallery">
@@ -201,13 +207,6 @@
     <div class="romantic-photo" style="left: 75%; top: 65%; animation-delay: 11s;">
       <img src="foto4.jpg" alt="Foto 4">
     </div>
-  </div>
-
-  <div class="song-message">
-    <p>🎵 De esta Canción no me Olvidaré nunca 💖</p>
-    <a href="https://www.youtube.com/watch?v=pz9O3UeM_o0&list=RDpz9O3UeM_o0&start_radio=1" target="_blank">
-      Escuchar en YouTube 🎶
-    </a>
   </div>
 
   <div class="terminal" id="terminal">
