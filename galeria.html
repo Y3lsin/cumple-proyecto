@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Galería de Recuerdos 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #8B0000);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-shadow: 0 0 15px #ff0000;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 30px rgba(255, 50, 50, 1);
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 25px;
+      background: linear-gradient(45deg, #8B0000, #000);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 1.2em;
+      font-weight: bold;
+      box-shadow: 0 0 15px rgba(255,0,0,0.7);
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: linear-gradient(45deg, #ff0000, #8B0000);
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>📸 Nuestra Galería de Recuerdos 💕</h1>
+
+<div class="gallery">
+  <img src="Foto 1.jpg" alt="Foto 1">
+  <img src="Foto 2.jpg" alt="Foto 2">
+  <img src="Foto 3.jpg" alt="Foto 3">
+  <img src="Foto 4.jpg" alt="Foto 4">
+  <img src="Foto 5.jpg" alt="Foto 5">
+  <img src="Foto 6.jpg" alt="Foto 6">
+  <img src="Foto 7.jpg" alt="Foto 7">
+  <img src="Foto 8.jpg" alt="Foto 8">
+  <img src="Foto 9.jpg" alt="Foto 9">
+  <img src="Foto 10.jpg" alt="Foto 10">
+</div>
+
+
+  <a href="index.html" class="back-btn">⬅️ Volver a la página principal</a>
+</body>
+</html>
